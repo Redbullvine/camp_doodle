@@ -865,6 +865,186 @@ h1 {
 }
 
 /* ══════════════════════════════════════════════════════════
+   COPPER SPOTLIGHT
+   ══════════════════════════════════════════════════════════ */
+.copper-section {
+  padding: clamp(5rem, 10vw, 9rem) 5vw;
+  background: linear-gradient(150deg, #fdf8ee 0%, #fef9f2 55%, #f7edda 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.copper-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,151,46,.13) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.copper-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,82,64,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.copper-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.copper-intro {
+  max-width: 700px;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.copper-intro h2 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: var(--pine);
+  margin: .3rem 0 1.1rem;
+  line-height: 1;
+}
+
+.copper-lead {
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  color: var(--ink-soft);
+  line-height: 1.78;
+  max-width: 56ch;
+}
+
+/* Split photo + copy */
+.copper-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.copper-photo-main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  aspect-ratio: 4/3;
+  background: var(--sage);
+}
+
+.copper-photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform .7s cubic-bezier(.25,.46,.45,.94);
+}
+
+.copper-photo-main:hover img { transform: scale(1.04); }
+
+/* Pull quote */
+.copper-quote {
+  font-size: clamp(1.18rem, 2.4vw, 1.55rem);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--pine);
+  line-height: 1.35;
+  border-left: 5px solid var(--gold);
+  padding-left: 1.4rem;
+  margin: 0 0 1.8rem;
+}
+
+.copper-copy p {
+  color: var(--ink-soft);
+  line-height: 1.82;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.copper-copy p:last-of-type { margin-bottom: 0; }
+
+.copper-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.8rem;
+}
+
+.copper-traits span {
+  padding: .42rem 1.05rem;
+  background: var(--pine);
+  color: #fff;
+  border-radius: 99px;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Photo gallery strip */
+.copper-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.copper-gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--sage);
+  aspect-ratio: 4/3;
+}
+
+.copper-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .55s cubic-bezier(.25,.46,.45,.94);
+}
+
+.copper-gallery-item:hover img { transform: scale(1.06); }
+
+.copper-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.2rem .95rem;
+  background: linear-gradient(0deg, rgba(17,30,22,.82) 0%, transparent 100%);
+  color: rgba(255,255,255,.93);
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .copper-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .copper-photo-main { aspect-ratio: 3/2; }
+}
+
+@media (max-width: 600px) {
+  .copper-gallery { grid-template-columns: 1fr; }
+  .copper-gallery-item { aspect-ratio: 3/2; }
+}
+
+/* ══════════════════════════════════════════════════════════
    PARENTS
    ══════════════════════════════════════════════════════════ */
 .parents-section { background: var(--sage-light); }
