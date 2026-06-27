@@ -1,266 +1,417 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Camp Doodle | Goldendoodle and Labradoodle Puppies</title>
-    <meta
-      name="description"
-      content="Camp Doodle raises Goldendoodle and Labradoodle puppies for families looking for friendly, well-socialized companions."
-    >
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Camp Doodle home">
-        <span class="brand-mark">CD</span>
-        <span>Camp Doodle</span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camp Doodle | Family-Raised Goldendoodle &amp; Labradoodle Puppies</title>
+  <meta name="description" content="Camp Doodle raises affectionate, confident Goldendoodle and Labradoodle puppies for families. Born May 18 — meet our available puppies and start your inquiry today.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Camp Doodle | Family-Raised Doodle Puppies">
+  <meta property="og:description" content="Affectionate, confident Goldendoodle and Labradoodle puppies raised with care, daily socialization, and real family love.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom cursor (desktop only) -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ─── HEADER ─────────────────────────────────────────────────────────── -->
+<header class="site-header" id="site-header">
+  <a class="brand" href="#home" aria-label="Camp Doodle home">
+    <span class="brand-mark" aria-hidden="true">CD</span>
+    <span class="brand-name">Camp Doodle</span>
+  </a>
+
+  <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+    <a href="#puppies">Puppies</a>
+    <a href="#parents">Our Dogs</a>
+    <a href="#journey">Journey</a>
+    <a href="#quiz">Find Your Match</a>
+    <a href="#care">Care</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="header-right">
+    <a class="button primary nav-cta" href="#contact">Ask About Puppies</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <nav aria-label="Mobile navigation">
+    <a href="#puppies">Puppies</a>
+    <a href="#parents">Our Dogs</a>
+    <a href="#journey">Journey</a>
+    <a href="#quiz">Find Your Match</a>
+    <a href="#care">Care</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="button primary" href="#contact">Ask About Puppies</a>
+</div>
+<div class="mobile-menu-backdrop" id="mobile-menu-backdrop" aria-hidden="true"></div>
+
+<!-- ─── HERO ───────────────────────────────────────────────────────────── -->
+<main>
+<section class="hero" id="home" aria-labelledby="hero-title">
+
+  <!-- Media layer: video takes priority; falls back to image if video missing -->
+  <div class="hero-media" aria-hidden="true">
+    <!-- Replace hero-puppies.mp4 with a short muted clip (< 15s, < 8 MB) -->
+    <video class="hero-video" autoplay muted loop playsinline
+           poster="assets/camp-doodle-hero.png">
+      <source src="assets/hero-puppies.mp4" type="video/mp4">
+    </video>
+    <!-- Fallback image (current photo already in assets/) -->
+    <img class="hero-bg" src="assets/camp-doodle-hero.png"
+         alt="A golden doodle sitting in a sunlit green yard at Camp Doodle."
+         loading="eager">
+  </div>
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content reveal">
+    <p class="eyebrow">Goldendoodles &amp; Labradoodles</p>
+    <h1 id="hero-title">Family-raised doodles<br>with a loving start.</h1>
+    <p class="hero-sub">
+      Affectionate, confident companions raised with steady socialization,
+      daily handling, and genuine family love — at Camp Doodle.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary magnetic" href="#puppies">View Available Puppies</a>
+      <a class="button secondary magnetic" href="#contact">Ask About Puppies</a>
+    </div>
+  </div>
+
+  <button class="hero-scroll-hint" onclick="document.getElementById('pillars').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
+    <span>Scroll</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
+      <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
+      <circle class="scroll-dot" cx="8" cy="7" r="2.5" fill="currentColor"/>
+    </svg>
+  </button>
+</section>
+
+<!-- ─── PILLARS ────────────────────────────────────────────────────────── -->
+<section class="pillars-section" id="pillars" aria-label="Camp Doodle highlights">
+  <div class="pillar reveal">
+    <span class="pillar-num" aria-hidden="true">01</span>
+    <h2>Family focused</h2>
+    <p>Puppies are handled daily and gently introduced to household sights, sounds, and routines from day one.</p>
+  </div>
+  <div class="pillar reveal" style="--delay:0.1s">
+    <span class="pillar-num" aria-hidden="true">02</span>
+    <h2>Clear communication</h2>
+    <p>Families receive photos, updates, and practical preparation notes well before go-home day.</p>
+  </div>
+  <div class="pillar reveal" style="--delay:0.2s">
+    <span class="pillar-num" aria-hidden="true">03</span>
+    <h2>Thoughtful matching</h2>
+    <p>We learn about your home, schedule, and goals so each puppy lands in the best possible fit.</p>
+  </div>
+</section>
+
+<!-- ─── AVAILABLE PUPPIES ──────────────────────────────────────────────── -->
+<section class="section puppies-section" id="puppies" aria-labelledby="puppies-title">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Born May 19, 2026</p>
+    <h2 id="puppies-title">Meet the CampDoodle litter</h2>
+    <p>Seven Goldendoodle puppies raised in our home with daily attention, love, and a real head-start on the big world. First 5-way puppy vaccine record started June 26, 2026. Ready for homes July 14, 2026. Click any puppy to learn more.</p>
+  </div>
+
+  <!-- Status filter -->
+  <div class="puppy-filter reveal" role="group" aria-label="Filter puppies by status">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="available">Available</button>
+    <button class="filter-btn" data-filter="keeper">Possible Keeper</button>
+    <button class="filter-btn" data-filter="reserved">Reserved</button>
+    <button class="filter-btn" data-filter="pending">Pending</button>
+  </div>
+
+  <!-- JS renders puppy cards here -->
+  <div class="puppy-grid" id="puppy-grid" aria-live="polite">
+    <noscript>
+      <p style="color:var(--muted);padding:2rem 0">Please enable JavaScript to view puppy profiles.</p>
+    </noscript>
+  </div>
+</section>
+
+<!-- ─── MEET THE PARENTS ───────────────────────────────────────────────── -->
+<section class="section parents-section" id="parents" aria-labelledby="parents-title">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Behind the litter</p>
+    <h2 id="parents-title">Meet the dogs</h2>
+    <p>Great puppies start with great parents — and a very devoted puppy sitter.</p>
+  </div>
+  <!-- JS renders parent cards here -->
+  <div class="parents-grid" id="parents-grid"></div>
+</section>
+
+<!-- ─── PUPPY JOURNEY TIMELINE ─────────────────────────────────────────── -->
+<section class="journey-section" id="journey" aria-labelledby="journey-title">
+  <div class="journey-inner">
+    <div class="section-heading reveal">
+      <p class="eyebrow">The first eight weeks</p>
+      <h2 id="journey-title">A puppy's journey</h2>
+      <p>Every Camp Doodle puppy follows a thoughtful, caring path from birth to their new home.</p>
+    </div>
+    <!-- JS renders timeline steps here -->
+    <div class="journey-track" id="journey-track" aria-label="Puppy development timeline">
+      <div class="journey-line" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VIDEO REELS ────────────────────────────────────────────────────── -->
+<section class="section reels-section" id="reels" aria-labelledby="reels-title">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Puppy moments</p>
+    <h2 id="reels-title">Watch them grow</h2>
+    <p>Real clips from the whelping box, the yard, and Aunt Piper's watchful shift.</p>
+  </div>
+  <!-- JS renders reel cards here -->
+  <div class="reels-grid" id="reels-grid"></div>
+</section>
+
+<!-- ─── PUPPY MATCH QUIZ ───────────────────────────────────────────────── -->
+<section class="quiz-section" id="quiz" aria-labelledby="quiz-title">
+  <div class="quiz-inner">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Find your match</p>
+      <h2 id="quiz-title">Which puppy fits your family?</h2>
+      <p>Answer five quick questions and we will show you the puppies that match your home and lifestyle.</p>
+    </div>
+    <div class="quiz-card reveal" id="quiz-card" role="region" aria-live="polite" aria-label="Puppy match quiz">
+      <!-- JS renders quiz steps here -->
+    </div>
+  </div>
+</section>
+
+<!-- ─── CARE / TRUST ───────────────────────────────────────────────────── -->
+<section class="section care-section" id="care" aria-labelledby="care-title">
+  <div class="section-heading reveal" style="text-align:center;max-width:680px;margin:0 auto 3rem">
+    <p class="eyebrow">Care standards</p>
+    <h2 id="care-title">Raised right, from day one.</h2>
+    <p>A great family puppy starts long before go-home day. Here is what every Camp Doodle puppy receives.</p>
+  </div>
+  <div class="care-grid">
+    <article class="care-card reveal">
+      <div class="care-icon" aria-hidden="true">🩺</div>
+      <h3>Health &amp; Vet Care</h3>
+      <p>Each puppy receives a full vet exam, health records, and next-step care notes for your own veterinarian.</p>
+    </article>
+    <article class="care-card reveal" style="--delay:0.08s">
+      <div class="care-icon" aria-hidden="true">💉</div>
+      <h3>First Shots &amp; Deworming</h3>
+      <p>Age-appropriate vaccinations and deworming are completed before go-home day. Records provided.</p>
+    </article>
+    <article class="care-card reveal" style="--delay:0.16s">
+      <div class="care-icon" aria-hidden="true">🌱</div>
+      <h3>Early Socialization</h3>
+      <p>Puppies meet different people, sounds, textures, and routines so they grow up confident and adaptable.</p>
+    </article>
+    <article class="care-card reveal" style="--delay:0.24s">
+      <div class="care-icon" aria-hidden="true">🤝</div>
+      <h3>Pickup &amp; Transition</h3>
+      <p>We walk you through go-home day prep: crate setup, first-night routine, food transition, and travel tips.</p>
+    </article>
+    <article class="care-card reveal" style="--delay:0.32s">
+      <div class="care-icon" aria-hidden="true">📦</div>
+      <h3>What Families Receive</h3>
+      <p>A starter kit with health records, care notes, feeding schedule, and a familiar-scented item for comfort.</p>
+    </article>
+    <article class="care-card reveal" style="--delay:0.4s">
+      <div class="care-icon" aria-hidden="true">📞</div>
+      <h3>Ongoing Guidance</h3>
+      <p>We stay in touch. Questions after pickup are always welcome — we care about each puppy for life.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ─── FAQ ───────────────────────────────────────────────────────────── -->
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="section-heading compact reveal">
+    <p class="eyebrow">Helpful details</p>
+    <h2 id="faq-title">Common questions</h2>
+  </div>
+  <div class="faq-grid">
+    <details class="reveal">
+      <summary>How do we get on the waitlist?</summary>
+      <p>Send an inquiry below with your timing, preferred breed, and a little about your home. We will follow up with current plans and availability.</p>
+    </details>
+    <details class="reveal" style="--delay:0.05s">
+      <summary>Can we choose a specific puppy?</summary>
+      <p>Selections work best when temperament and family fit guide the decision. We will help you find the right match — and the quiz above is a great starting point.</p>
+    </details>
+    <details class="reveal">
+      <summary>What should we ask before reserving?</summary>
+      <p>Ask about parent dogs, health records, go-home timing, coat type expectations, and what support looks like after pickup. We will answer every question honestly.</p>
+    </details>
+    <details class="reveal" style="--delay:0.05s">
+      <summary>Where are you located?</summary>
+      <p>We are a home-based breeder. Location details and pickup logistics are shared directly with families after initial contact.</p>
+    </details>
+    <details class="reveal">
+      <summary>What is included at pickup?</summary>
+      <p>Health records, vaccination documentation, a care guide, feeding notes, and a familiar-scented item to help your puppy settle in.</p>
+    </details>
+    <details class="reveal" style="--delay:0.05s">
+      <summary>Do you ship puppies?</summary>
+      <p>We prefer in-person pickup so families can meet their puppy before going home. Reach out to discuss your situation and we will explore what works best.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────────────────── -->
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+  <div class="contact-copy reveal">
+    <p class="eyebrow">Start the conversation</p>
+    <h2 id="contact-title">Ask about available puppies.</h2>
+    <p>
+      Share what you are looking for and the timing that works for your family.
+      We will follow up with current availability, upcoming plans, and next steps.
+    </p>
+    <ul class="contact-trust">
+      <li>✓ We respond within 24 hours</li>
+      <li>✓ No pressure — just honest conversation</li>
+      <li>✓ Questions always welcome</li>
+    </ul>
+  </div>
+
+  <form
+    class="inquiry-form reveal"
+    name="puppy-inquiry"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    action="/thank-you.html"
+  >
+    <input type="hidden" name="form-name" value="puppy-inquiry">
+    <p class="hidden-field" aria-hidden="true">
+      <label>Do not fill this out <input name="bot-field" tabindex="-1"></label>
+    </p>
+
+    <div class="form-row">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name"
+             placeholder="First and last name" required>
+    </div>
+    <div class="form-row">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email"
+             placeholder="you@example.com" required>
+    </div>
+    <div class="form-row">
+      <label for="phone">Phone (optional)</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel"
+             placeholder="(555) 000-0000">
+    </div>
+    <div class="form-row">
+      <label for="puppy">Interested in</label>
+      <select id="puppy" name="puppy">
+        <option value="">— select a puppy —</option>
+        <option>Coby (ID 600) — Male</option>
+        <option>Nova (ID 605) — Female</option>
+        <option>Maple (ID 608) — Female</option>
+        <option>Lumi (ID 610) — Female</option>
+        <option>Elvis (ID 630) — Male</option>
+        <option>Onyx (ID 634) — Male</option>
+        <option>Finn (ID 635) — Male</option>
+        <option>Still deciding — open to a match</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="timeline">Ideal timing</label>
+      <select id="timeline" name="timeline">
+        <option>As soon as a good match is available</option>
+        <option>Within 3 months</option>
+        <option>Within 6 months</option>
+        <option>Planning ahead</option>
+      </select>
+    </div>
+    <div class="form-row full">
+      <label for="message">Tell us about your home</label>
+      <textarea id="message" name="message" rows="5"
+                placeholder="Kids, other pets, yard, experience with dogs — anything helps us understand what you are looking for."
+                required></textarea>
+    </div>
+    <button class="button primary form-button magnetic" type="submit">Send Inquiry</button>
+  </form>
+</section>
+
+<!-- ─── FATANETT STRIP ─────────────────────────────────────────────────── -->
+<section class="fatanett-strip" aria-label="Site credits">
+  <div class="fatanett-inner">
+    <div class="fatanett-copy">
+      <p class="fatanett-label">Designed &amp; built by</p>
+      <a class="fatanett-brand" href="https://fatanett.com" target="_blank" rel="noopener noreferrer">
+        Fatanett
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#puppies">Puppies</a>
-        <a href="#process">Process</a>
-        <a href="#care">Care</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+      <p class="fatanett-sub">Premium web experiences for growing businesses.</p>
+    </div>
+    <a class="button fatanett-cta" href="https://fatanett.com" target="_blank" rel="noopener noreferrer">
+      Need a website like this? →
+    </a>
+  </div>
+</section>
 
-    <main id="home">
-      <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-image"
-          src="assets/camp-doodle-hero.png"
-          alt="A happy cream doodle sitting in a sunlit green yard."
-        >
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Goldendoodles and Labradoodles</p>
-          <h1 id="hero-title">Puppies raised for family life.</h1>
-          <p>
-            Camp Doodle helps families find affectionate, confident doodle companions
-            with a thoughtful start, steady socialization, and clear guidance.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#contact">Ask about puppies</a>
-            <a class="button secondary" href="#process">How it works</a>
-          </div>
-        </div>
-      </section>
+</main>
 
-      <section class="intro-section" aria-label="Camp Doodle highlights">
-        <div class="intro-item">
-          <span class="stat">01</span>
-          <h2>Family focused</h2>
-          <p>Puppies are handled daily and introduced to normal household sights, sounds, and routines.</p>
-        </div>
-        <div class="intro-item">
-          <span class="stat">02</span>
-          <h2>Clear communication</h2>
-          <p>Families receive updates, photos, and practical preparation notes before go-home day.</p>
-        </div>
-        <div class="intro-item">
-          <span class="stat">03</span>
-          <h2>Thoughtful matching</h2>
-          <p>We learn about your home, schedule, and goals so each puppy has the best possible fit.</p>
-        </div>
-      </section>
+<!-- ─── FOOTER ────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <span class="brand-mark small" aria-hidden="true">CD</span>
+    <div>
+      <p class="footer-name">Camp Doodle</p>
+      <p>Goldendoodle &amp; Labradoodle puppies raised for family life.</p>
+    </div>
+  </div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="#puppies">Puppies</a>
+    <a href="#parents">Our Dogs</a>
+    <a href="#journey">Journey</a>
+    <a href="#care">Care</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <p class="footer-credit">© 2025 Camp Doodle</p>
+</footer>
 
-      <section class="section" id="puppies">
-        <div class="section-heading">
-          <p class="eyebrow">Available and upcoming</p>
-          <h2>Puppy plans</h2>
-          <p>
-            Start here for the basics. As litters are planned and puppies arrive,
-            this section can be updated with photos, birth dates, parents, and availability.
-          </p>
-        </div>
-        <div class="puppy-grid">
-          <article class="puppy-card">
-            <div class="card-topline">Waitlist open</div>
-            <h3>Goldendoodles</h3>
-            <p>Friendly, people-loving companions with soft coats and playful energy.</p>
-            <dl>
-              <div>
-                <dt>Best for</dt>
-                <dd>Active families</dd>
-              </div>
-              <div>
-                <dt>Next step</dt>
-                <dd>Send an inquiry</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="puppy-card accent-card">
-            <div class="card-topline">Planning ahead</div>
-            <h3>Labradoodles</h3>
-            <p>Bright, affectionate puppies with a sturdy, eager-to-learn temperament.</p>
-            <dl>
-              <div>
-                <dt>Best for</dt>
-                <dd>Companion homes</dd>
-              </div>
-              <div>
-                <dt>Next step</dt>
-                <dd>Join updates</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="puppy-card">
-            <div class="card-topline">Good to know</div>
-            <h3>Going home</h3>
-            <p>Puppies go home with transition guidance and a starter plan for the first weeks.</p>
-            <dl>
-              <div>
-                <dt>Focus</dt>
-                <dd>Confidence</dd>
-              </div>
-              <div>
-                <dt>Support</dt>
-                <dd>Family prep</dd>
-              </div>
-            </dl>
-          </article>
-        </div>
-      </section>
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
 
-      <section class="process-section" id="process">
-        <div class="section-heading compact">
-          <p class="eyebrow">Simple next steps</p>
-          <h2>The Camp Doodle process</h2>
-        </div>
-        <ol class="timeline">
-          <li>
-            <span>1</span>
-            <div>
-              <h3>Tell us about your family</h3>
-              <p>Share your home setup, experience with dogs, timing, and what you hope for in a puppy.</p>
-            </div>
-          </li>
-          <li>
-            <span>2</span>
-            <div>
-              <h3>Get litter updates</h3>
-              <p>We keep interested families posted as plans are confirmed and puppies are growing.</p>
-            </div>
-          </li>
-          <li>
-            <span>3</span>
-            <div>
-              <h3>Prepare for go-home day</h3>
-              <p>You receive practical notes for food, crate setup, training, grooming, and the ride home.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
+<!-- Sticky mobile CTA -->
+<div class="sticky-mobile-cta" id="sticky-cta" aria-hidden="true">
+  <a class="button primary" href="#contact">Ask About Puppies</a>
+</div>
 
-      <section class="section care-section" id="care">
-        <div class="care-copy">
-          <p class="eyebrow">Care standards</p>
-          <h2>Raised with a steady routine and a soft landing.</h2>
-          <p>
-            A great family puppy starts before go-home day. Camp Doodle focuses on daily handling,
-            early confidence building, clean spaces, and honest conversations with each family.
-          </p>
-        </div>
-        <div class="care-list" aria-label="Care priorities">
-          <div>
-            <h3>Early socialization</h3>
-            <p>Gentle exposure to household life helps puppies grow into curious, adaptable companions.</p>
-          </div>
-          <div>
-            <h3>Veterinary guidance</h3>
-            <p>Families receive clear health records and next-step care notes for their own veterinarian.</p>
-          </div>
-          <div>
-            <h3>Lifetime mindset</h3>
-            <p>Matching is based on temperament, lifestyle, timing, and the long-term needs of the puppy.</p>
-          </div>
-        </div>
-      </section>
+<!-- ─── PUPPY MODAL ────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="puppy-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal-panel">
+    <button class="modal-close" id="modal-close" aria-label="Close puppy profile">&times;</button>
+    <div class="modal-body" id="modal-body">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
 
-      <section class="faq-section" aria-labelledby="faq-title">
-        <div class="section-heading compact">
-          <p class="eyebrow">Helpful details</p>
-          <h2 id="faq-title">Common questions</h2>
-        </div>
-        <div class="faq-grid">
-          <details>
-            <summary>How do we get on the waitlist?</summary>
-            <p>Send an inquiry with your timing, preferred breed, and a little about your home.</p>
-          </details>
-          <details>
-            <summary>Can we choose a specific puppy?</summary>
-            <p>Selections work best when temperament and family fit lead the decision.</p>
-          </details>
-          <details>
-            <summary>What should we ask before reserving?</summary>
-            <p>Ask about parent dogs, health records, go-home timing, coat expectations, and support.</p>
-          </details>
-          <details>
-            <summary>Where are you located?</summary>
-            <p>Add your city or region here so local families know whether travel is practical.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-copy">
-          <p class="eyebrow">Start the conversation</p>
-          <h2 id="contact-title">Ask about upcoming puppies.</h2>
-          <p>
-            Share what you are looking for and the timeline that would work for your family.
-            We will follow up with current plans and next steps.
-          </p>
-        </div>
-        <form
-          class="inquiry-form"
-          name="puppy-inquiry"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/thank-you.html"
-        >
-          <input type="hidden" name="form-name" value="puppy-inquiry">
-          <p class="hidden-field">
-            <label>Do not fill this out <input name="bot-field"></label>
-          </p>
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="form-row">
-            <label for="breed">Interested in</label>
-            <select id="breed" name="breed">
-              <option>Goldendoodle</option>
-              <option>Labradoodle</option>
-              <option>Either breed</option>
-              <option>Still deciding</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="timeline">Ideal timing</label>
-            <select id="timeline" name="timeline">
-              <option>As soon as a good fit is available</option>
-              <option>Within 3 months</option>
-              <option>Within 6 months</option>
-              <option>Planning for later</option>
-            </select>
-          </div>
-          <div class="form-row full">
-            <label for="message">Tell us about your home</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button class="button primary form-button" type="submit">Send inquiry</button>
-        </form>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>Camp Doodle</p>
-      <p>Goldendoodle and Labradoodle puppies raised for family life.</p>
-    </footer>
-  </body>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
 </html>
