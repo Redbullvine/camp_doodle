@@ -400,28 +400,26 @@ p { overflow-wrap: anywhere; }
 .hero-media {
   position: absolute;
   inset: 0;
-}
-
-.hero-bg,
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 68% center;
-}
-
-.hero-video {
-  z-index: 1;
+  /* Sky-to-meadow fill behind the contained photo so the letterbox
+     area blends with the image instead of showing bare bars. */
+  background:
+    linear-gradient(180deg,
+      #aacbe4 0%,
+      #c6dcea 30%,
+      #dfe9d8 60%,
+      #c9dcb4 100%);
 }
 
 .hero-bg {
+  position: absolute;
+  inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
+  /* Show the WHOLE photo, never crop it. */
+  object-fit: contain;
+  object-position: right center;
 }
-
-/* When video loads and plays, it covers the image */
-.hero-video:not([src="assets/hero-puppies.mp4"]) { display: none; }
 
 .hero-overlay {
   position: absolute;
@@ -1915,11 +1913,21 @@ input:focus, select:focus, textarea:focus {
   place-items: center;
   padding: 1rem;
   overflow-y: auto;
+  /* Closed state: invisible AND non-interactive. The `hidden` attribute alone
+     can't hide it because the `display: grid` above overrides [hidden]'s
+     display:none — so without this it stays a full-screen click trap over the
+     whole page and swallows clicks on the hero buttons, nav, etc. */
   opacity: 0;
-  transition: opacity .3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .3s ease, visibility .3s ease;
 }
 
-.modal-overlay:not([hidden]) { opacity: 1; }
+.modal-overlay:not([hidden]) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .modal-panel {
   position: relative;
@@ -2121,6 +2129,10 @@ input:focus, select:focus, textarea:focus {
   .pillars-section { grid-template-columns: 1fr; }
 
   .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 3.5rem; }
+  /* Photo hugs the top so the whole image shows in its own band and the
+     headline/buttons drop into the clear space below it (no collision with
+     the photo's own "Camp Doodle" sign). */
+  .hero-bg { object-position: center top; }
   .hero-overlay {
     background:
       linear-gradient(0deg,

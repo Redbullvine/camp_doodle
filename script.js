@@ -814,21 +814,6 @@
     renderStep();
   })();
 
-  /* ═══════════════════════════════════════════════════════
-     HERO VIDEO FALLBACK
-     Hides the video element if mp4 can't be loaded,
-     letting the poster/img show through cleanly.
-     ═══════════════════════════════════════════════════════ */
-  (function initHeroVideo() {
-    const video = qs('.hero-video');
-    if (!video) return;
-    video.addEventListener('error', () => { video.style.display = 'none'; });
-
-    // If video has no loadable source, hide it
-    if (!video.src && video.querySelectorAll('source').length === 0) {
-      video.style.display = 'none';
-    }
-  })();
 
   /* ═══════════════════════════════════════════════════════
      SMOOTH ANCHOR NAV (offset for sticky header)
