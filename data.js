@@ -6,6 +6,11 @@
 
 window.CD = {
 
+  // Puppy photos are AI-generated placeholders for now. While true, the site
+  // shows a clean "Photo coming soon" card instead of the AI images. Flip to
+  // false once real photos of each puppy are dropped in (paths kept below).
+  hidePuppyPhotos: true,
+
   /* ─── PUPPIES ──────────────────────────────────────────────────────────── */
   // status: 'available' | 'reserved' | 'pending' | 'keeper'
   puppies: [

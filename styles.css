@@ -631,11 +631,11 @@ h1 {
   opacity: .5;
 }
 
-.photo-ph small {
-  font-size: .7rem;
-  opacity: .7;
-  font-family: monospace;
-  word-break: break-all;
+.photo-ph-label {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  opacity: .85;
 }
 
 /* Hide placeholder when image loads */
@@ -1482,6 +1482,7 @@ h1 {
 .quiz-match-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
 .quiz-match-photo {
+  position: relative;
   aspect-ratio: 1;
   background: var(--sage);
   overflow: hidden;

@@ -27,8 +27,7 @@
     div.className = 'photo-ph';
     div.innerHTML = `
       <div class="photo-ph-icon">📷</div>
-      <div>${label || 'Photo coming soon'}</div>
-      <small>${path || ''}</small>`;
+      <div class="photo-ph-label">Photo coming soon</div>`;
     return div;
   }
 
@@ -204,15 +203,17 @@
       const photoDiv = document.createElement('div');
       photoDiv.className = 'card-photo';
 
-      const img = document.createElement('img');
-      img.src = puppy.photo;
-      img.alt = puppy.photoAlt || puppy.name;
-      img.loading = 'lazy';
-      if (puppy.photoPosition) img.style.objectPosition = puppy.photoPosition;
-      img.onerror = function () { this.style.display = 'none'; };
-      photoDiv.appendChild(img);
+      if (puppy.photo && !D.hidePuppyPhotos) {
+        const img = document.createElement('img');
+        img.src = puppy.photo;
+        img.alt = puppy.photoAlt || puppy.name;
+        img.loading = 'lazy';
+        if (puppy.photoPosition) img.style.objectPosition = puppy.photoPosition;
+        img.onerror = function () { this.style.display = 'none'; };
+        photoDiv.appendChild(img);
+      }
 
-      // Placeholder (shown if image fails)
+      // Placeholder (shown when no image is present or it fails to load)
       photoDiv.appendChild(photoPlaceholder(puppy.photo, puppy.name));
 
       // Status badge
@@ -345,7 +346,9 @@
     const body    = qs('#modal-body');
     if (!overlay || !body) return;
 
-    galleryPhotos = puppy.photos && puppy.photos.length ? puppy.photos : [puppy.photo];
+    galleryPhotos = D.hidePuppyPhotos
+      ? []
+      : (puppy.photos && puppy.photos.length ? puppy.photos : (puppy.photo ? [puppy.photo] : []));
     galleryIndex = 0;
 
     const thumbsHtml = galleryPhotos.length > 1
@@ -371,8 +374,7 @@
         ).join('')}
         <div class="photo-ph" style="${galleryPhotos.length?'display:none':''}">
           <div class="photo-ph-icon">📷</div>
-          <div>Photo coming soon</div>
-          <small>${puppy.photo}</small>
+          <div class="photo-ph-label">Photo coming soon</div>
         </div>
         ${thumbsHtml}
       </div>
@@ -778,7 +780,9 @@
             <div class="quiz-match-card" data-id="${p.id}" role="button" tabindex="0"
                  aria-label="View ${p.name} profile">
               <div class="quiz-match-photo">
-                <img src="${p.photo}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+                ${(p.photo && !D.hidePuppyPhotos)
+                  ? `<img src="${p.photo}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">`
+                  : `<div class="photo-ph"><div class="photo-ph-icon">📷</div><div class="photo-ph-label">Photo coming soon</div></div>`}
               </div>
               <div class="quiz-match-body">
                 <p class="quiz-match-name">${p.name}</p>
